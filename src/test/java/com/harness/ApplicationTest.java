@@ -8,8 +8,9 @@ import static org.junit.Assert.*;
 public class ApplicationTest {
     private Application app;
     
-    @Before
+    @Test
     public void setup() {
         app = new Application();
+	assertNotNull(app);
     }
 }
