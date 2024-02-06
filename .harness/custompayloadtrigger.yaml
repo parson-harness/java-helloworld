@@ -1,0 +1,19 @@
+inputSet:
+  name: custom-payload-trigger
+  identifier: custompayloadtrigger
+  orgIdentifier: SE_Sandbox
+  projectIdentifier: parson
+  pipeline:
+    identifier: citestfromapi
+    variables:
+      - name: payload
+        type: String
+        value: <+trigger.payload.my_key>
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.payload.my_branch>
+  object Object: pipeline.properties.ci.codebase
